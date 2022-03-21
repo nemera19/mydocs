@@ -36,7 +36,7 @@ def get_files(url: str):
                 + "/master/"
                 + dir_name
                 + "/"
-                + content.path.split("/")[-1]
+                + content.path.replace(' ', '%20').split("/")[-1]
             )
             if check_updates(github_file.content, content.path):
                 urlretrieve(
@@ -46,6 +46,6 @@ def get_files(url: str):
                     + "/master/"
                     + dir_name
                     + "/"
-                    + content.path.split("/")[-1],
+                    + content.path.replace(' ', '%20').split("/")[-1],
                     content.path.split("/")[-1],
                 )
