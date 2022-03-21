@@ -16,6 +16,9 @@
 
 from get_rst_files import get_files
 
+import requests
+from github import Github
+
 # -- Project information -----------------------------------------------------
 
 project = 'mydocs'
