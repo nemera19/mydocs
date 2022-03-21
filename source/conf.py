@@ -55,4 +55,4 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-get_files('https://github.com/CloudFerro/doc/tree/master/source/DataAccess')
+get_files('https://github.com/CloudFerro/doc/tree/master/source/Gstarted')

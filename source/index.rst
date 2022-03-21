@@ -10,11 +10,9 @@ Welcome to mydocs's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   dataaccess
-   nfs
-   s3
-   file_storage
-   
+   editingprofile
+   general
+
 
 
 Indices and tables
