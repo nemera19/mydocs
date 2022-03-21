@@ -10,8 +10,7 @@ Welcome to mydocs's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   editingprofile
-   general
+   Gstarted_VM_created_with_option_"Create_New_Volume"_-_No
 
 
 

@@ -9,7 +9,7 @@ def process_url(url: str):
     if "tree" in url:
         repo, dir_name = url.split("/tree/master/")
         return repo.replace("https://github.com/", ""), dir_name
-    return None
+    return None, None
 
 
 def check_updates(file, file_path):
@@ -23,6 +23,8 @@ def check_updates(file, file_path):
 
 def get_files(url: str):
     repo_name, dir_name = process_url(url)
+    if repo_name is None:
+        return
     gh = Github()
     repo = gh.get_repo(repo_name)
     github_raw_url = "https://raw.githubusercontent.com"
