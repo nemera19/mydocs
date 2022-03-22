@@ -10,9 +10,6 @@ Welcome to mydocs's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   Gstarted_VM_created_with_option_"Create_New_Volume"_-_No
-
-
 
 Indices and tables
 ==================
@@ -20,3 +17,4 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+* :ref:`my-reference-label`
