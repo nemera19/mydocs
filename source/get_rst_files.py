@@ -9,7 +9,7 @@ from github import Github
 
 def process_url(url: str):
     if "tree" in url:
-        repo, dir_name = re.split("/tree/\w+/", url)
+        repo, dir_name = re.split(r"/tree/\w+/", url)
         return repo.replace("https://github.com/", ""), dir_name
     return None, None
 
@@ -45,3 +45,4 @@ def get_files(url: str) -> None:
             github_file = requests.get(github_file_url)
             if check_updates(github_file.content, content.path.split("/")[-1]):
                 urlretrieve(github_file_url, content.path.split("/")[-1])
+
