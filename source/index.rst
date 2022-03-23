@@ -9,7 +9,9 @@ Welcome to mydocs's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+   editingprofile
+   accounts_projects
+   inviting_new_user
 
 Indices and tables
 ==================
