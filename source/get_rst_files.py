@@ -1,7 +1,6 @@
 from os.path import exists
 import re
 from urllib.request import urlretrieve
-from xmlrpc.client import Boolean
 
 import requests
 from github import Github
@@ -14,7 +13,7 @@ def process_url(url: str):
     return None, None
 
 
-def check_updates(github_file_content: str, local_file_path: str) -> Boolean:
+def check_updates(github_file_content: str, local_file_path: str) -> bool:
     if (
         exists(local_file_path)
         and github_file_content == open(local_file_path, "rb").read()
