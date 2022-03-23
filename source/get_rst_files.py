@@ -1,4 +1,5 @@
 from os.path import exists
+import re
 from urllib.request import urlretrieve
 from xmlrpc.client import Boolean
 
@@ -8,7 +9,7 @@ from github import Github
 
 def process_url(url: str):
     if "tree" in url:
-        repo, dir_name = url.split("/tree/master/")
+        repo, dir_name = re.split("/tree/\w+/", url)
         return repo.replace("https://github.com/", ""), dir_name
     return None, None
 
@@ -16,7 +17,7 @@ def process_url(url: str):
 def check_updates(github_file_content: str, local_file_path: str) -> Boolean:
     if (
         exists(local_file_path)
-        and github_file_content.decode("utf-8") == open(local_file_path, "r").read()
+        and github_file_content == open(local_file_path, "rb").read()
     ):
         return False
     return True
@@ -44,4 +45,3 @@ def get_files(url: str) -> None:
             github_file = requests.get(github_file_url)
             if check_updates(github_file.content, content.path.split("/")[-1]):
                 urlretrieve(github_file_url, content.path.split("/")[-1])
-
