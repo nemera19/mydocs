@@ -9,13 +9,9 @@ Welcome to mydocs's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
-   dataaccess
-   nfs
-   s3
-   file_storage
-   
-
+   editingprofile
+   accounts_projects
+   inviting_new_user
 
 Indices and tables
 ==================
@@ -23,3 +19,4 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+* :ref:`my-reference-label`
