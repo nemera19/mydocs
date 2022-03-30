@@ -24,7 +24,7 @@ def check_updates(github_file_content: str, local_file_path: str) -> bool:
 
 def get_files(urls_list: list) -> None:
     for url in urls_list:
-        repo_name, dir_name = process_url(url)
+        repo_name, dir_name = process_url(url.replace("blob", "tree"))
         if repo_name is None:
             return
         gh = Github()
