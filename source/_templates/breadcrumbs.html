@@ -1,0 +1,16 @@
+<div role="navigation" aria-label="{{ _('Page navigation') }}">
+    <ul class="wy-breadcrumbs">
+      {%- block breadcrumbs_aside %}
+      {% for key, value in urls_dict.items() %}
+      {% if key == pagename %}
+      <li class="wy-breadcrumbs-aside">
+        {% if display_github %}
+            <li><a href="{{ value }}">
+            Edit on github </a></li>
+        {% endif %}
+      {% endif %}
+      {% endfor %}
+        
+        {% endblock %}
+    </ul>
+</div>
