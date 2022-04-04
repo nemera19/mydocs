@@ -45,13 +45,22 @@ exclude_patterns = []
 #
 html_theme = "sphinx_rtd_theme"
 
-urls_dict = get_files('https://github.com/CloudFerro/doc/tree/master/source/Gstarted')
+urls_dict = get_files(
+    [
+        "https://github.com/CloudFerro/doc/tree/master/source/Gstarted",
+    ]
+)
 
 
 html_context = {
     "display_github": True,
     "urls_dict": urls_dict,
-    "test_var": "123 test var 123",
+    "github_host": "github.com",
+    "github_user": "CloudFerro",
+    "github_repo": "test_2022",
+    "github_version": "main",
+    "conf_py_path": "/source/",
+    "source_suffix": ".rst",
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,

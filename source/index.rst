@@ -10,8 +10,10 @@ Welcome to mydocs's documentation!
    :maxdepth: 2
    :caption: Contents:
    
-   dataaccess
-   nfs
+   accounts_projects
+   adding_editing_organization
+   contracts_wallets
+   editingprofile
 
 Indices and tables
 ==================
