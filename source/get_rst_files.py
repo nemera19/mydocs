@@ -45,9 +45,3 @@ def get_files(urls_list: list) -> dict:
                 if check_updates(github_file.content, content.path.split("/")[-1]):
                     urlretrieve(github_file_url, content.path.split("/")[-1])
     return repos_url
-
-urls_dict = get_files(
-    [
-        "https://github.com/CloudFerro/kubernetes-doc/tree/main/source/article_02",
-    ]
-)
