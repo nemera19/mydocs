@@ -47,7 +47,7 @@ html_theme = "sphinx_rtd_theme"
 
 urls_dict = get_files(
     [
-        "https://github.com/CloudFerro/doc/tree/master/source/Gstarted",
+        "https://github.com/CloudFerro/kubernetes-doc/tree/main/source/How-to-Use-Security-Groups-to-Tighten-Security-Using-Eumetsat-Elasticity-OpenStack-Magnum",
     ]
 )
 

@@ -1,6 +1,8 @@
 from os.path import exists
 import re
 from urllib.request import urlretrieve
+import urllib.parse
+from urllib.error import HTTPError
 
 import requests
 from github import Github
@@ -43,5 +45,10 @@ def get_files(urls_list: list) -> dict:
                 )
                 github_file = requests.get(github_file_url)
                 if check_updates(github_file.content, content.path.split("/")[-1]):
-                    urlretrieve(github_file_url, content.path.split("/")[-1])
+                    try:
+                        urlretrieve(urllib.parse.quote(github_file_url,safe=':/'), content.path.split("/")[-1])
+                    except HTTPError as err:
+                        if err.code == 404:
+                            print("this file can't be downloaded", content.name)
     return repos_url
+    
