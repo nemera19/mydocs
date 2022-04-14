@@ -10,14 +10,7 @@ Welcome to mydocs's documentation!
    :maxdepth: 2
    :caption: Contents:
    
-   accounts_projects
-   adding_editing_organization
-   contracts_wallets
-   editingprofile
+   nfs
 
 Indices and tables
 ==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
