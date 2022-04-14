@@ -1,51 +1,54 @@
+import re
 from os.path import exists
+import re
 from urllib.request import urlretrieve
-
+from os import environ
 import requests
 from github import Github
 
 
 def process_url(url: str):
     if "tree" in url:
-        repo, dir_name = url.split("/tree/master/")
+        repo, dir_name = re.split(r"/tree/\w+/", url)
         return repo.replace("https://github.com/", ""), dir_name
-    return None
+    return None, None
 
 
-def check_updates(file, file_path):
+def urls_list_to_dict(urls_list: list) -> dict:
+    urls_dict = {}
+    for url in urls_list:
+        repo_name, dir_name = process_url(url.replace("blob", "tree"))
+        if not urls_dict.get(repo_name, None):
+            urls_dict[repo_name] = []
+        urls_dict[repo_name].append(dir_name)
+    return urls_dict
+
+
+def check_updates(github_file_content: str, local_file_path: str) -> bool:
     if (
-        exists(file_path.replace("source/", ""))
-        and file.decode("utf-8") == open(file_path.replace("source/", ""), "r").read()
+        exists(local_file_path)
+        and github_file_content == open(local_file_path, "rb").read()
     ):
         return False
     return True
 
+def get_files(urls_list: list) -> dict:
+    external_repos_url = {}
+    urls_dict = urls_list_to_dict(urls_list)
+    gh = Github(
+        login_or_token=environ.get("github_token", "")
+    )
+    for repo, dirs in urls_dict.items():
+        repo = gh.get_repo(repo)
+        for dir_name in dirs:
+            contents_list = repo.get_contents(dir_name)
+            for content in contents_list:
+                if content.type == "file":
+                    if ".rst" in content.name:
+                        external_repos_url[content.name.split(".")[0]] = content.html_url
+                    github_file_url = content.download_url
+                    github_file = requests.get(github_file_url)
+                    if check_updates(github_file.content, content.path.split("/")[-1]):
+                        urlretrieve(github_file_url, content.path.split("/")[-1])
 
-def get_files(url: str):
-    repo_name, dir_name = process_url(url)
-    gh = Github()
-    repo = gh.get_repo(repo_name)
-    github_raw_url = "https://raw.githubusercontent.com"
-    contents_list = repo.get_contents(dir_name)
-    for content in contents_list:
-        if content.type == 'file':
-            github_file = requests.get(
-                github_raw_url
-                + "/"
-                + repo.full_name
-                + "/master/"
-                + dir_name
-                + "/"
-                + content.path.split("/")[-1]
-            )
-            if check_updates(github_file.content, content.path):
-                urlretrieve(
-                    github_raw_url
-                    + "/"
-                    + repo.full_name
-                    + "/master/"
-                    + dir_name
-                    + "/"
-                    + content.path.split("/")[-1],
-                    content.path.split("/")[-1],
-                )
+    return external_repos_url
