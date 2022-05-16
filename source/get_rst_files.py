@@ -27,11 +27,11 @@ def urls_list_to_dict(urls_list: list) -> dict:
 def check_updates(github_file_content: str, local_file_path: str) -> bool:
     dir_name = local_file_path.split("/")[0]
     file_path = dir_name + local_file_path
-    if exists("source/" + dir_name):
+    if exists(dir_name):
         if exists(file_path) and github_file_content == open(file_path, "rb").read():
             return False
     else:
-        os.makedirs("source/" + dir_name)
+        os.makedirs(dir_name)
     return True
 
 
@@ -58,7 +58,6 @@ def get_files(urls_list: dict) -> dict:
                         ):
                             urlretrieve(
                                 github_file_url,
-                                "source/" + folder + "/" + content.path.split("/")[-1],
+                                folder + "/" + content.path.split("/")[-1],
                             )
     return external_repos_url
-
