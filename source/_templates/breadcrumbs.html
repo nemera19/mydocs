@@ -30,7 +30,6 @@
     {%- endblock %}
     {%- block breadcrumbs_aside %}
       <li class="wy-breadcrumbs-aside">
-        {{pagename}}
         {%- if hasdoc(pagename) and display_vcs_links %}
           {%- if display_github %}
             {% if  urls_dict[pagename] %}
