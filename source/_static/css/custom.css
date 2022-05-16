@@ -1,0 +1,39 @@
+@import 'theme.css';
+
+.wy-side-nav-search{
+    background-color:#05203E;
+}
+.wy-side-scroll{
+    background-color: #05203E;
+}
+.wy-nav-content {
+    background-color: #05203E;
+}
+.wy-nav-content-wrap {
+    background-color: #73b3fd;
+}
+.h2 {
+    color: #73b3fd;
+}
+.section ul {
+    color: white;
+}
+.wy-breadcrumbs li a:first-child {
+    color: #FF8225
+  }
+.rst-content .toctree-wrapper > p.caption, .rst-content h1, .rst-content h2, .rst-content h3, .rst-content h4, .rst-content h5, .rst-content h6 {
+    color: #157EFB;
+}
+.wy-breadcrumbs li {
+    color: #FF8225
+  }
+
+.rst-content .section ol li > :first-child, .rst-content .section ul li > :first-child, .rst-content .toctree-wrapper ol li > :first-child, .rst-content .toctree-wrapper ul li > :first-child, .rst-content section ol li > :first-child, .rst-content section ul li > :first-child {
+    color: white;
+}
+footer {
+    color:white;
+}
+a:visited {
+    color: #FF8225
+}

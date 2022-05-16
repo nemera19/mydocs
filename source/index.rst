@@ -1,21 +1,12 @@
-.. mydocs documentation master file, created by
-   sphinx-quickstart on Mon Mar  7 14:06:34 2022.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+CF3 DOCUMENTATION!
+==================
 
-Welcome to mydocs's documentation!
-==================================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
-   dataaccess
-   nfs
-   s3
-   file_storage
-   
-
+   kubernetes/kubernetes
+   faq/faq
 
 Indices and tables
 ==================

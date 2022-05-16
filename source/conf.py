@@ -18,9 +18,9 @@ from get_rst_files import get_files
 
 # -- Project information -----------------------------------------------------
 
-project = 'mydocs'
-copyright = '2022, Liza'
-author = 'Liza'
+project = "mydocs"
+copyright = "2022, Liza"
+author = "Liza"
 
 
 # -- General configuration ---------------------------------------------------
@@ -28,11 +28,10 @@ author = 'Liza'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-]
+extensions = []
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -45,11 +44,48 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = "sphinx_rtd_theme"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ["_static"]
+urls_dict = get_files(
+    {
+        "kubernetes": [
+            "https://github.com/nemera19/waw3-1-kubernetes-test/tree/main/source/kubernetes",
+            "https://github.com/CloudFerro/kubernetes-doc/blob/main/source/How-to-Create-a-Kubernetes-Cluster-Using-Eumetsat-Elasticity-OpenStack-Magnum",
+            "https://github.com/CloudFerro/kubernetes-doc/blob/main/source/How-to-Create-a-Kubernetes-Cluster-Template-Using-Eumetsat-Elasticity-OpenStack-Magnum",
+            "https://github.com/CloudFerro/kubernetes-doc/blob/main/source/How-To-Install-OpenStack-and-Magnum-Clients-for-Command-Line-Interface-to-Eumetsat-Elasticity-Horizon",
+        ],
+        "faq": [
+            "https://github.com/nemera19/waw3-1-kubernetes-test/tree/main/source/faq",
+            "https://github.com/CloudFerro/cf3-doc/blob/main/source/datavolume/accessusings3cmd",     
+            "https://github.com/CloudFerro/cf3-doc/blob/main/source/datavolume/attachvolumetovmlessthan2tb",   
+            "https://github.com/CloudFerro/cf3-doc/blob/main/source/datavolume/cannotaccesseodata",  
+            "https://github.com/CloudFerro/cf3-doc/blob/main/source/datavolume/ephemeralvspersistentstorage",
+            "https://github.com/CloudFerro/cf3-doc/blob/main/source/datavolume/exportvolumenfs",
+            "https://github.com/CloudFerro/cf3-doc/blob/main/source/datavolume/exportvolumeovernfs",  
+            "https://github.com/CloudFerro/cf3-doc/blob/main/source/datavolume/extendvolumelinux",  
+            "https://github.com/CloudFerro/cf3-doc/blob/main/source/datavolume/howmanyobjectsobjectstorage",  
+            "https://github.com/CloudFerro/cf3-doc/blob/main/source/datavolume/howtoaccesseodata",  
+            "https://github.com/CloudFerro/cf3-doc/blob/main/source/datavolume/howtomountdriveoverssh",  
+            "https://github.com/CloudFerro/cf3-doc/blob/main/source/datavolume/mountobjectstoragelinux",  
+            "https://github.com/CloudFerro/cf3-doc/blob/main/source/datavolume/moveadatavolume",  
+            "https://github.com/CloudFerro/cf3-doc/blob/main/source/datavolume/volumesnapshotinheritanceanditsconsequences",  
+            "https://github.com/CloudFerro/cf3-doc/blob/main/source/datavolume/volumesnapshot",  
+        ],
+    }
+)
 
-get_files('https://github.com/CloudFerro/doc/tree/master/source/DataAccess')
+
+html_context = {
+    "display_github": True,
+    "urls_dict": urls_dict,
+    "github_host": "github.com",
+    "github_user": "CloudFerro",
+    "github_repo": "waw3-1-kubernetes-test",
+    "github_version": "main",
+    "conf_py_path": "/source/",
+    "source_suffix": ".rst",
+}
