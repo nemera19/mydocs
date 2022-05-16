@@ -5,8 +5,8 @@ CF3 DOCUMENTATION!
 .. toctree::
    :maxdepth: 2
 
-   source/kubernetes/kubernetes
-   source/faq/faq
+   kubernetes/kubernetes
+   faq/faq
 
 Indices and tables
 ==================
