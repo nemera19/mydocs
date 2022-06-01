@@ -2,6 +2,7 @@ import re
 import os
 from os.path import exists
 from urllib.request import urlretrieve
+from conf import brand_name
 
 import requests
 from github import Github
@@ -35,6 +36,29 @@ def check_updates(github_file_content: str, local_file_path: str) -> bool:
     return True
 
 
+def download_content(content, folder):
+    content_url = {}
+    content_path = content.path
+    if "|brand-name|" in content.name:
+        content_path = content.path.replace("|brand-name|", brand_name)
+    if content.type == "file":
+        if ".rst" in content.name:
+            content_url[
+                folder + "/" + content_path.split("/")[-1].replace(".rst", "")
+            ] = content.html_url
+        github_file_url = content.download_url
+        github_file = requests.get(github_file_url)
+        if check_updates(
+            github_file.content,
+            folder + "/" + content_path.split("/")[-1],
+        ):
+            urlretrieve(
+                github_file_url,
+                folder + "/" + content_path.split("/")[-1],
+            )
+    return content_url
+
+
 def get_files(urls_list: dict) -> dict:
     external_repos_url = {}
     for folder in urls_list.keys():
@@ -45,19 +69,5 @@ def get_files(urls_list: dict) -> dict:
             for dir_name in dirs:
                 contents_list = repo.get_contents(dir_name)
                 for content in contents_list:
-                    if content.type == "file":
-                        if ".rst" in content.name:
-                            external_repos_url[
-                                content.path.replace("source/", "").replace(".rst", "")
-                            ] = content.html_url
-                        github_file_url = content.download_url
-                        github_file = requests.get(github_file_url)
-                        if check_updates(
-                            github_file.content,
-                            folder + "/" + content.path.split("/")[-1],
-                        ):
-                            urlretrieve(
-                                github_file_url,
-                                folder + "/" + content.path.split("/")[-1],
-                            )
+                    external_repos_url.update(download_content(content, folder))
     return external_repos_url
