@@ -1,11 +1,12 @@
-import re
 import os
+import re
 from os.path import exists
 from urllib.request import urlretrieve
-from conf import brand_name
 
 import requests
 from github import Github
+
+from conf import brand_name
 
 
 def process_url(url: str):
@@ -14,6 +15,11 @@ def process_url(url: str):
         return repo.replace("https://github.com/", ""), dir_name
     return None, None
 
+def process_content(content):
+    content_path = content.path
+    if "|brand-name|" in content.name:
+        content_path = content.path.replace("|brand-name|", brand_name)
+    return content_path.split("/")[-1]
 
 def urls_list_to_dict(urls_list: list) -> dict:
     urls_dict = {}
@@ -38,23 +44,21 @@ def check_updates(github_file_content: str, local_file_path: str) -> bool:
 
 def download_content(content, folder):
     content_url = {}
-    content_path = content.path
-    if "|brand-name|" in content.name:
-        content_path = content.path.replace("|brand-name|", brand_name)
+    content_name = process_content(content)
     if content.type == "file":
         if ".rst" in content.name:
             content_url[
-                folder + "/" + content_path.split("/")[-1].replace(".rst", "")
+                folder + "/" + content_name.replace(".rst", "")
             ] = content.html_url
         github_file_url = content.download_url
         github_file = requests.get(github_file_url)
         if check_updates(
             github_file.content,
-            folder + "/" + content_path.split("/")[-1],
+            folder + "/" + content_name,
         ):
             urlretrieve(
                 github_file_url,
-                folder + "/" + content_path.split("/")[-1],
+                folder + "/" + content_name,
             )
     return content_url
 
@@ -71,3 +75,14 @@ def get_files(urls_list: dict) -> dict:
                 for content in contents_list:
                     external_repos_url.update(download_content(content, folder))
     return external_repos_url
+
+
+urls_dict = get_files(
+    {
+        "security": [
+            "https://github.com/CloudFerro/eolab-articles/tree/main/source/security",
+	    "https://github.com/CloudFerro/eolab-articles/blob/main/source/security/How-To-Avoid-Unwanted-SSH-Login-Attempts",
+
+        ],
+    }
+)
