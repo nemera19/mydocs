@@ -75,14 +75,3 @@ def get_files(urls_list: dict) -> dict:
                 for content in contents_list:
                     external_repos_url.update(download_content(content, folder))
     return external_repos_url
-
-
-urls_dict = get_files(
-    {
-        "security": [
-            "https://github.com/CloudFerro/eolab-articles/tree/main/source/security",
-	    "https://github.com/CloudFerro/eolab-articles/blob/main/source/security/How-To-Avoid-Unwanted-SSH-Login-Attempts",
-
-        ],
-    }
-)
