@@ -60,11 +60,11 @@ urls_dict = get_files(
   
         "eodata": [
             "https://github.com/CloudFerro/eolab-articles/tree/main/source/eodata",
+            "https://github.com/CloudFerro/eolab-articles/blob/main/source/eodata/CopDEM-10m-Rapid-Eye-Access-In-EO-Lab-Repository",
             "https://github.com/CloudFerro/eolab-articles/blob/main/source/eodata/How-To-Access-Earth-Observation-Data-EODATA",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/eodata/CopDEM-10m-Rapid-Eye-Access-In-Code-de-Repository-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/eodata/How-To-Connect-With-EO-Data-In-Jupyter-Notebook-EO-Lab",
             "https://github.com/CloudFerro/eolab-articles/blob/main/source/eodata/How-To-Access-The-CREODIAS-Repository-From-A-VM-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/eodata/How-To-Download-Copernicus-Contributing-Mission-Products-To-Object-Storage-EO-Lab",
+            "https://github.com/CloudFerro/eolab-articles/blob/main/source/eodata/How-To-Connect-With-EO-Data-In-Jupyter-Notebook-EO-Lab",
+            "https://github.com/CloudFerro/eolab-articles/blob/main/source/eodata/How-To-Download-Copernicus-Contributing-Mission-Products-To-Object-Storage-EO-Lab", 
         ],
 
         "general": [
@@ -79,20 +79,19 @@ urls_dict = get_files(
 			"https://github.com/CloudFerro/cf3-doc/blob/main/source/s3/s3fscache",
 			"https://github.com/CloudFerro/cf3-doc/blob/main/source/datavolume/ephemeralvspersistentstorage",
 			"https://github.com/CloudFerro/cf3-doc/blob/main/source/datavolume/volumesnapshot",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Access-Sen4CAP-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Access-A-VM-From-Windows-PuTTY-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Access-A-VM-With-MobaXterm-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Connect-To-A-Windows-VM-Using-Remote-Desktop-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Get-Access-To-The-GUI-Of-A-OSGeoLive-VM-Using-X2go-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Install-Cuda-Nvidia-Drivers-For-VMs-With-GPU-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Install-Docker-In-A-Linux-VM-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Install-Singularity-On-Linux-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Make-A-VM-Available-For-Several-Remote-Users-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Mount-Object-Storage-Container-As-File-System-In-Windows-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Transfer-Data-Tofrom-A-VM-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Upload-And-Synchronise-Files-With-SCP-RSYNC-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/general/Sentinel-Hub-Configuration-Utility-Overview-EO-Lab",
-          
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Access-A-VM-From-Windows-PuTTY-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Access-A-VM-With-MobaXterm-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Access-Sen4CAP-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Connect-To-A-Windows-VM-Using-Remote-Desktop-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Get-Access-To-The-GUI-Of-A-OSGeoLive-VM-Using-X2go-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Install-Cuda-Nvidia-Drivers-For-VMs-With-GPU-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Install-Docker-In-A-Linux-VM-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Install-Singularity-On-Linux-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Make-A-VM-Available-For-Several-Remote-Users-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Mount-Object-Storage-Container-As-File-System-In-Windows-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Transfer-Data-Tofrom-A-VM-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/general/How-To-Upload-And-Synchronise-Files-With-SCP-RSYNC-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/general/Sentinel-Hub-Configuration-Utility-Overview-EO-Lab",
         ],
 
         "networking": [
@@ -102,11 +101,11 @@ urls_dict = get_files(
 			"https://github.com/CloudFerro/cf3-doc/blob/main/source/networking/connectviasshwin",
 			"https://github.com/CloudFerro/cf3-doc/blob/main/source/networking/opennewports",
 			"https://github.com/CloudFerro/cf3-doc/blob/main/source/networking/vmvisible",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/networking/How-To-Access-VMs-Using-Names-Instead-Of-IP-Addresses-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/networking/How-To-Configure-The-Firewall-For-CODE-DE-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/networking/How-To-Open-Ports-e.g.-Port-80-For-Http-For-Servicesinstances-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/networking/How-To-Restrict-VM-Access-To-Dedicated-IP-Addresses-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/networking/How-To-Share-Folders-Using-NFS-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/networking/How-To-Access-VMs-Using-Names-Instead-Of-IP-Addresses-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/networking/How-To-Configure-The-Firewall-For-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/networking/How-To-Open-Ports-e.g.-Port-80-For-Http-For-Servicesinstances-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/networking/How-To-Restrict-VM-Access-To-Dedicated-IP-Addresses-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/networking/How-To-Share-Folders-Using-NFS-EO-Lab",
 
         ],
 
@@ -131,17 +130,17 @@ urls_dict = get_files(
 			"https://github.com/CloudFerro/cf3-doc/blob/main/source/networking/createanetworkwithrouter",
 			"https://github.com/CloudFerro/cf3-doc/blob/main/source/s3/objectstorage",
      		"https://github.com/CloudFerro/cf3-doc/blob/main/source/datavolume/attachvolumetovmlessthan2tb",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/Cannot-Attach-Interface-To-VM-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/Dashboard-Overview---Project-Quotas-And-Flavors-Limits-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/How-To-ShelveUnshelve-A-VM-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/How-To-Attach-A-Volume-2TB-To-A-VM-In-Linux-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/How-To-Attach-A-Volume-To-A-Windows-VM-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/How-To-Change-Parameters-Of-An-Already-Existing-And-Configured-VM-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/How-To-Create-A-Volume-Backup-From-A-Linux-VM-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/How-To-Create-A-Volume-Backup-From-A-Windows-VM-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/How-To-Create-An-SSH-Key-Pair-In-Windows-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/How-To-Transfer-VMs-And-Volumes-Between-OpenStack-Projects-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/What-Image-Formats-Are-Available-In-OpenStack-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/Cannot-Attach-Interface-To-VM-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/Dashboard-Overview---Project-Quotas-And-Flavors-Limits-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/How-To-Attach-A-Volume-2TB-To-A-VM-In-Linux-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/How-To-Attach-A-Volume-To-A-Windows-VM-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/How-To-Change-Parameters-Of-An-Already-Existing-And-Configured-VM-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/How-To-Create-A-Volume-Backup-From-A-Linux-VM-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/How-To-Create-A-Volume-Backup-From-A-Windows-VM-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/How-To-Create-An-SSH-Key-Pair-In-Windows-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/How-To-ShelveUnshelve-A-VM-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/How-To-Transfer-VMs-And-Volumes-Between-OpenStack-Projects-EO-Lab",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/openstack/What-Image-Formats-Are-Available-In-OpenStack-EO-Lab",
 
         ],
 
@@ -161,10 +160,12 @@ urls_dict = get_files(
             "https://github.com/CloudFerro/eolab-articles/tree/main/source/security",
 			"https://github.com/CloudFerro/cf3-doc/blob/main/source/general/generateec2",
 			"https://github.com/CloudFerro/cf3-doc/blob/main/source/networking/sshkeypair",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/security/What-If-I-Forgot-To-Add-The-SSH-Key-To-My-VM-Or-Deleted-It-EO-Lab",
-            "https://github.com/CloudFerro/eolab-articles/blob/main/source/security/How-To-Avoid-Unwanted-SSH-Login-Attempts",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/security/How-To-Avoid-Unwanted-SSH-Login-Attempts",
+			"https://github.com/CloudFerro/eolab-articles/blob/main/source/security/What-If-I-Forgot-To-Add-The-SSH-Key-To-My-VM-Or-Deleted-It-EO-Lab",
 	
         ],
+
+
        
     }
 )
