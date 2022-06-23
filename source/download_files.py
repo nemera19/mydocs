@@ -4,13 +4,8 @@ from os.path import exists
 from urllib.request import urlretrieve
 
 import requests
-import github
 from github import Github
 
-from sphinx.util import logging
-
-
-logger = logging.getLogger(__name__)
 
 def process_url(url: str):
     if "tree" in url:
@@ -48,14 +43,7 @@ def get_files(urls_list: dict) -> dict:
         for repo, dirs in urls_dict.items():
             repo = gh.get_repo(repo)
             for dir_name in dirs:
-                contents_list = []
-                try:
-                    contents_list = repo.get_contents(dir_name)
-                except github.GithubException as e:
-                    logger.warning(
-                        '"%s" is omitted, "%s", "%s"'
-                        % (dir_name, e.status, e.data["message"])
-                    )
+                contents_list = repo.get_contents(dir_name)
                 for content in contents_list:
                     if content.type == "file":
                         if ".rst" in content.name:
@@ -72,4 +60,4 @@ def get_files(urls_list: dict) -> dict:
                                 github_file_url,
                                 folder + "/" + content.path.split("/")[-1],
                             )
-    return external_repos_url
+    return 
